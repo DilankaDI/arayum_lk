@@ -12,7 +12,11 @@ export function PhonePreview({ template, cover = false, className = "" }: { temp
         <div className="relative z-10 flex items-center justify-between px-[8cqw] pt-[5cqw] pb-[3cqw] text-[4.3cqw] font-extrabold">
           <span>9:41</span><span className="absolute top-[4cqw] left-1/2 h-[7cqw] w-[28cqw] -translate-x-1/2 rounded-full bg-[#201c23]" /><Wifi className="size-[5cqw]" />
         </div>
-        {cover ? (
+        {["champagne-seal", "garden-poruwa"].includes(template.slug) ? (
+          <div className="relative min-h-0 flex-1">
+            <img src={`/design-previews/${template.slug}-phone-${cover ? "cover" : "inside"}.webp`} alt="" className="absolute inset-0 size-full object-cover object-center" />
+          </div>
+        ) : cover ? (
           <div className="relative isolate flex flex-1 flex-col items-center justify-center overflow-hidden px-[9cqw] text-center">
             <div className="absolute inset-[7%] rounded-t-[48%] rounded-b-[5%] border opacity-55" style={{ borderColor: accent }} />
             {design === "lace" && <LaceFlowers />}

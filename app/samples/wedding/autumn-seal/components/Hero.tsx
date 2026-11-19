@@ -1,15 +1,26 @@
 import { wedding } from "../lib/wedding";
-
+import Atmosphere from "./Atmosphere";
+import { scene } from "../lib/scene";
 export default function Hero() {
-  const { names, date, ceremony } = wedding.card;
+  const { names } = wedding.card;
   return (
-    <header className="hero">
-      <img src={wedding.heroImage} alt={ceremony + " invitation artwork"} />
-      <div className="hero-copy">
-        <p className="eyeline">{wedding.heroCaption}</p>
-        <h1 className="couple my-5">{names.join(" & ")}</h1>
-        <p>{ceremony} · {date}</p>
+    <header className="inside-hero folio">
+      <div className="folio-copy">
+        <p className="small-head">{wedding.heroCaption}</p>{" "}
+        <h1>
+          {names[0]} <em>&amp;</em> {names[1]}
+        </h1>{" "}
+        <span className="rule" aria-hidden="true" />{" "}
+        <p className="where">
+          <strong>{wedding.card.date}</strong>
+          <br />
+          {wedding.card.venue} · {wedding.card.location}
+        </p>
       </div>
+      <div className="folio-picture">
+        <img className="scene-art" src={scene.art} alt="" />
+      </div>
+      <Atmosphere />
     </header>
   );
 }

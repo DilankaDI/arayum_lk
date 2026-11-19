@@ -1,0 +1,866 @@
+@import "tailwindcss" source(none);
+@source "./";
+@theme {
+  --font-serif: "Cormorant Garamond Variable", Georgia, serif;
+  --color-ink: #242421;
+}
+:root {
+  --paper: #ececdc;
+  --ink: #273e2a;
+  --accent: #85734a;
+  --stage: #afb998;
+  --art: url("/scenes/tea-country.webp");
+  --serif: "Cormorant Garamond Variable", Georgia, serif;
+  --sans: "Manrope Variable", sans-serif;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--sans);
+  -webkit-font-smoothing: antialiased;
+}
+body > main > nav {
+  background: var(--paper);
+  color: var(--ink);
+  min-height: 44px;
+  position: relative;
+  z-index: 3;
+  padding: 0.7rem clamp(1rem, 4vw, 3rem);
+}
+button,
+a,
+summary {
+  touch-action: manipulation;
+}
+button,
+summary {
+  cursor: pointer;
+}
+:focus-visible {
+  outline: 3px solid currentColor;
+  outline-offset: 4px;
+}
+.dream-cover {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  display: grid;
+  align-items: center;
+  min-height: calc(100svh - 44px);
+  color: #fff7e7;
+  background: #18231d;
+  perspective: 1500px;
+}
+.world-image,
+.vignette,
+.atmosphere,
+.transition-leaf {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+.world-image {
+  z-index: -2;
+  background: var(--art) center/cover;
+}
+.vignette {
+  z-index: -1;
+  background: linear-gradient(90deg, #10150ee6, #12191066 52%, transparent);
+}
+.cover-content {
+  position: relative;
+  width: 100%;
+  margin: auto;
+  padding: clamp(2.4rem, 7vw, 7rem);
+  z-index: 1;
+}
+.cover-art {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+.cover-label,
+.small-head {
+  font: 700 0.68rem/1.6 var(--sans);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+}
+.dream-cover h1,
+.inside-hero h1 {
+  font: 500 clamp(4.2rem, 9vw, 9.6rem)/0.87 var(--serif);
+  letter-spacing: -0.052em;
+  text-wrap: balance;
+  overflow-wrap: break-word;
+  margin: 1.25rem 0;
+}
+.dream-cover h1 em,
+.inside-hero h1 em {
+  font-weight: 400;
+  font-size: 0.62em;
+}
+.cover-date,
+.where {
+  font: 500 0.85rem/1.8 var(--sans);
+  letter-spacing: 0.025em;
+}
+.cover-date span {
+  margin: 0 0.25em;
+}
+.open-invite {
+  display: inline-flex;
+  gap: 1.1rem;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  margin: 1.6rem 0 0;
+  border: 1px solid currentColor;
+  padding: 0.7rem 1.1rem;
+  background: transparent;
+  color: inherit;
+  font: 600 0.8rem var(--sans);
+  transition:
+    background 0.2s,
+    transform 0.2s;
+}
+.open-invite:hover {
+  background: color-mix(in srgb, currentColor 10%, transparent);
+  transform: translateY(-2px);
+}
+.crest {
+  display: inline-block;
+  font: italic 600 1.7rem var(--serif);
+  letter-spacing: 0.1em;
+}
+.atmosphere {
+  z-index: 2;
+}
+.guest-controls {
+  position: fixed;
+  z-index: 8;
+  bottom: max(0.65rem, env(safe-area-inset-bottom));
+  right: 0.75rem;
+  display: flex;
+  gap: 0.4rem;
+}
+.guest-controls button {
+  border: 1px solid #e4d9bd66;
+  background: #191e1be8;
+  color: #fffaf0;
+  border-radius: 2rem;
+  padding: 0.6rem 0.85rem;
+  font: 600 0.68rem var(--sans);
+}
+.transition-leaf {
+  display: none;
+  z-index: 3;
+}
+.opening .cover-content {
+  animation: parting 0.9s ease-in both;
+}
+.opening .world-image {
+  animation: approach 0.92s ease-in both;
+}
+@keyframes parting {
+  to {
+    transform: translateY(-1rem);
+    opacity: 0;
+  }
+}
+@keyframes approach {
+  to {
+    transform: scale(1.1);
+  }
+}
+@keyframes foldaway {
+  to {
+    transform: perspective(900px) rotateY(-95deg);
+    opacity: 0.05;
+  }
+}
+@keyframes fallaway {
+  to {
+    transform: translateY(110%) rotate(10deg);
+    opacity: 0.1;
+  }
+}
+@keyframes develop {
+  from {
+    opacity: 0;
+    filter: blur(5px);
+  }
+  to {
+    opacity: 1;
+    filter: none;
+  }
+}
+.dream-inside {
+  overflow: hidden;
+}
+.inside-hero {
+  position: relative;
+  isolation: isolate;
+  padding: clamp(2.8rem, 7vw, 7rem) max(6vw, 1.2rem);
+  animation: develop 0.75s ease-out;
+}
+.inside-hero img,
+.memory-photo img,
+.collection figure img {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+}
+.scene-art,
+.couple-photo {
+  max-height: 37rem;
+}
+.inside-hero h1 {
+  font-size: clamp(3.8rem, 9vw, 8rem);
+}
+.invite-line {
+  font: italic 1.7rem/1.25 var(--serif);
+  max-width: 26rem;
+}
+.where {
+  margin-top: 1.2rem;
+}
+.rule {
+  display: block;
+  width: 4rem;
+  height: 1px;
+  background: var(--accent);
+  margin: 1.5rem 0;
+}
+.memory,
+.itinerary,
+.collection,
+.section {
+  padding: clamp(3.3rem, 8vw, 7.5rem) max(6vw, 1.25rem);
+  max-width: 78rem;
+  margin: auto;
+}
+h2 {
+  font: 500 clamp(2.7rem, 5vw, 5rem)/1 var(--serif);
+  letter-spacing: -0.035em;
+  text-wrap: balance;
+}
+.memory-copy > p:last-child {
+  max-width: 38rem;
+  line-height: 1.95;
+  margin: 1.1rem 0;
+}
+.timepiece {
+  max-width: 31rem;
+  min-width: 0;
+  margin: 2rem 0;
+}
+.timepiece > .small-head {
+  margin-bottom: 0.7rem;
+}
+.timepiece .grid > div {
+  border: 0;
+  border-radius: 0;
+  border-top: 1px solid currentColor;
+  padding: 0.65rem 0.15rem;
+}
+.itinerary-title {
+  margin-bottom: 2rem;
+}
+.itinerary ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.itinerary li {
+  display: grid;
+  grid-template-columns: 2rem 5.8rem 1fr;
+  gap: 0.35rem;
+  align-items: baseline;
+  border-bottom: 1px solid color-mix(in srgb, currentColor 23%, transparent);
+  padding: 1.1rem 0;
+}
+.itinerary time {
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+.itinerary h3 {
+  font: 600 clamp(1.35rem, 3vw, 2.1rem)/1.2 var(--serif);
+}
+.event-mark {
+  color: var(--accent);
+}
+.arrival {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+.arrival strong {
+  font: 600 1.65rem/1.1 var(--serif);
+}
+.arrival p,
+.guest-links {
+  font-size: 0.85rem;
+}
+.guest-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.guest-links a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  text-decoration: underline;
+  text-underline-offset: 0.3rem;
+}
+.collection figure {
+  margin: 1.4rem 0;
+}
+.collection figure img {
+  height: clamp(16rem, 38vw, 31rem);
+  object-position: center 35%;
+  animation: develop 0.4s ease-out;
+}
+.gallery-caption p {
+  margin: 0.7rem 0;
+  font-size: 0.78rem;
+}
+.frames {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+.frames button {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.35rem 0.65rem 0.35rem 0.35rem;
+  border: 1px solid transparent;
+  font-size: 0.75rem;
+}
+.frames button[aria-pressed="true"] {
+  border-color: currentColor;
+}
+.frames img {
+  height: 2.3rem;
+  width: 2.3rem;
+  object-fit: cover;
+}
+.section {
+  text-align: center;
+}
+.section > p {
+  margin: 1rem auto;
+}
+.section form {
+  background: color-mix(in srgb, var(--paper) 91%, var(--accent));
+  border-radius: 0.25rem;
+}
+footer {
+  text-align: center;
+  padding: 2rem 1rem 5.5rem;
+}
+@media (max-width: 600px) {
+  .cover-content {
+    padding: 2rem 1.3rem 3.5rem;
+  }
+  .dream-cover h1 {
+    font-size: clamp(3.3rem, 14vw, 5.2rem);
+  }
+  .itinerary li {
+    grid-template-columns: 1.4rem 5rem 1fr;
+  }
+  .guest-controls button {
+    font-size: 0.65rem;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .motion-control {
+    display: none;
+  }
+}
+
+.dream-cover {
+  align-items: end;
+}
+.vignette {
+  background: linear-gradient(0deg, #0b241be8, transparent 76%);
+}
+.horizon-copy {
+  border-left: 2px solid #e9d8a9;
+  padding-left: clamp(1rem, 3vw, 3rem);
+  max-width: 58rem;
+}
+.horizon-copy h1 {
+  font-style: italic;
+}
+.world-image {
+  background-position: center 59%;
+}
+.open-invite {
+  background: #f1f1d9;
+  color: #264135;
+  border-color: #eaeed6;
+}
+.opening .world-image {
+  animation: hillwalk 0.92s ease-in both;
+}
+@keyframes hillwalk {
+  to {
+    transform: scale(1.18) translateY(-2%);
+  }
+}
+
+/* A printed edition */
+.inside-hero.broadsheet {
+  max-width: 76rem;
+  margin: auto;
+  text-align: center;
+}
+.broadsheet h1 {
+  border-block: 5px double;
+  margin: 1rem auto;
+  padding: 0.6rem;
+  font-weight: 700;
+}
+.lead-columns {
+  display: grid;
+  grid-template-columns: 1.7fr 1fr;
+  align-items: center;
+  gap: 2rem;
+  text-align: left;
+}
+.lead-columns img {
+  filter: grayscale(1);
+  height: clamp(15rem, 35vw, 28rem);
+}
+.memory.broadsheet,
+.collection.broadsheet {
+  border-block: 4px double;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 2rem;
+}
+.memory.broadsheet .memory-copy > p:last-child:first-letter {
+  float: left;
+  font: 4.5rem/0.9 var(--serif);
+  margin-right: 0.3rem;
+}
+.collection.broadsheet figure {
+  grid-row: span 2;
+}
+/* Landscape and travel itinerary */
+.inside-hero.voyage,
+.inside-hero.atlas,
+.inside-hero.concert {
+  min-height: 76svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  color: #fff6e4;
+}
+.inside-hero.voyage > .scene-art,
+.inside-hero.atlas > .scene-art,
+.inside-hero.concert > .scene-art {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  max-height: none;
+  z-index: -2;
+}
+.inside-hero.voyage:after,
+.inside-hero.atlas:after,
+.inside-hero.concert:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, #111b20e8, transparent 95%);
+  z-index: -1;
+}
+.ticket-stub {
+  align-self: flex-start;
+  border-top: 2px dashed #ddcdae;
+  margin-top: 1.2rem;
+}
+.ticket-stub .where {
+  margin-top: 0.6rem;
+}
+.itinerary.voyage li {
+  border-left: 2px dashed var(--accent);
+  padding-left: 0.8rem;
+  border-bottom: none;
+}
+.memory.voyage,
+.memory.journal,
+.memory.cinema,
+.memory.concert,
+.memory.folio {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr);
+  align-items: center;
+  gap: 2rem;
+}
+.memory-photo {
+  margin: 0;
+}
+.memory-photo img {
+  height: clamp(14rem, 36vw, 29rem);
+}
+.memory.voyage .memory-photo {
+  transform: rotate(-3deg);
+  border: 8px solid #faf5e8;
+  border-bottom-width: 26px;
+  box-shadow: 0 7px 20px #0002;
+}
+.memory .timepiece:last-child {
+  grid-column: 1/-1;
+  width: min(100%, 34rem);
+}
+/* Botanical diary and woven folio */
+.inside-hero.journal,
+.inside-hero.folio,
+.inside-hero.exhibition,
+.inside-hero.courtyard,
+.inside-hero.letter,
+.inside-hero.supper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: clamp(1.5rem, 5vw, 5rem);
+}
+.journal-front {
+  padding: 0.5rem;
+  border: 1px solid var(--accent);
+  transform: rotate(-2deg);
+}
+.journal-front img {
+  aspect-ratio: 4/5;
+}
+.journal-leaf {
+  padding: 1.4rem;
+  border-left: 2px solid var(--accent);
+}
+.journal-leaf h1 em,
+.folio-copy h1 em {
+  display: block;
+}
+.itinerary.journal li {
+  border-bottom: 1px dashed var(--accent);
+}
+.collection.journal figure img {
+  border-radius: 7rem 7rem 0 0;
+}
+.folio-picture img {
+  border: 9px double var(--accent);
+}
+.collection.folio {
+  border-block: 7px double var(--accent);
+}
+/* Night map */
+.inside-hero.atlas {
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+.atlas-heading {
+  max-width: 48rem;
+  text-shadow: 0 2px 14px #142022;
+}
+.atlas-heading .invite-line {
+  margin: auto;
+}
+.itinerary.atlas ol {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 2rem 0;
+}
+.itinerary.atlas li {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  flex: 1 1 9rem;
+  border: 0;
+  border-top: 1px solid var(--accent);
+}
+.itinerary.atlas .event-mark {
+  font-size: 2rem;
+}
+.memory.atlas {
+  border-block: 1px solid var(--accent);
+}
+/* Gallery wall */
+.inside-hero.exhibition .artwork {
+  padding: 1.3rem;
+  background: #fff;
+  box-shadow: 0.4rem 0.6rem 1.5rem #0002;
+}
+.exhibit-caption {
+  border-left: 0.45rem solid var(--accent);
+  padding-left: 1.5rem;
+}
+.exhibit-caption h1 {
+  font: 650 clamp(2.8rem, 6vw, 6.8rem)/0.97 var(--sans);
+  letter-spacing: -0.07em;
+}
+.collection.exhibition {
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: 1rem;
+  align-items: center;
+}
+.collection.exhibition figure {
+  border: 8px solid white;
+  box-shadow: 0 5px 14px #0002;
+}
+.collection.exhibition .frames {
+  grid-column: 1/-1;
+}
+/* Open courtyard */
+.doorway {
+  border-radius: 14rem 14rem 0 0;
+  overflow: hidden;
+  border: 5px double var(--accent);
+}
+.doorway img {
+  aspect-ratio: 4/5;
+}
+.itinerary.courtyard {
+  background: var(--ink);
+  color: var(--paper);
+}
+.memory.courtyard {
+  text-align: center;
+}
+.memory.courtyard p,
+.memory.courtyard .timepiece {
+  margin-inline: auto;
+}
+/* Service booklet */
+.inside-hero.service {
+  text-align: center;
+  max-width: 55rem;
+  margin: auto;
+}
+.service .rule,
+.service .invite-line {
+  margin-inline: auto;
+}
+.service-window {
+  width: min(100%, 24rem);
+  margin: 1.4rem auto;
+  border: 5px double var(--accent);
+  border-radius: 12rem 12rem 0 0;
+  overflow: hidden;
+}
+.service-window img {
+  aspect-ratio: 1.5;
+}
+.itinerary.service {
+  max-width: 48rem;
+  border-block: 5px double var(--accent);
+}
+.itinerary.service .itinerary-title {
+  text-align: center;
+}
+/* Cinema */
+.inside-hero.cinema {
+  background: #17151b;
+  color: #f8ecd9;
+  padding-inline: 0;
+  text-align: center;
+}
+.screen {
+  max-width: 60rem;
+  margin: auto;
+  border-block: 8px dotted #ab9b84;
+}
+.screen img {
+  width: 100%;
+  height: clamp(12rem, 38vw, 27rem);
+}
+.film-title {
+  padding: 1.3rem;
+}
+.collection.cinema figure {
+  background: #161518;
+  padding: 1rem;
+  border-block: 8px dotted #bba78a;
+}
+.collection.cinema .frames img {
+  filter: grayscale(1);
+}
+.collection.cinema .frames [aria-pressed="true"] img {
+  filter: none;
+}
+/* Letters */
+.hand-letter {
+  padding: clamp(1rem, 4vw, 3rem);
+  text-align: center;
+  outline: 1px solid var(--accent);
+  outline-offset: -0.3rem;
+}
+.hand-letter .rule,
+.hand-letter .invite-line {
+  margin-inline: auto;
+}
+.keepsake {
+  padding: 0.7rem 0.7rem 2rem;
+  background: #fffaf0;
+  box-shadow: 0 8px 18px #0002;
+  transform: rotate(3deg);
+}
+.keepsake img {
+  aspect-ratio: 4/5;
+}
+.personal-letter {
+  max-width: 49rem;
+  margin: auto;
+  border-block: 1px solid var(--accent);
+  padding: 1.5rem 0;
+}
+.personal-letter summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font: 500 1.6rem var(--serif);
+}
+.personal-letter .memory-copy {
+  padding-top: 1.5rem;
+}
+.memory.letter .timepiece {
+  margin: 2rem auto;
+}
+/* Music programme */
+.concert-bill {
+  text-align: center;
+  max-width: 43rem;
+  margin: auto;
+  padding: 2rem;
+  background: #211821bb;
+  border: 3px double #e4c694;
+}
+.concert-bill .rule {
+  margin-inline: auto;
+}
+.itinerary.concert {
+  background: #211b25;
+  color: #f5e5d0;
+}
+.itinerary.concert li {
+  grid-template-columns: 2rem 1fr 2fr;
+}
+.itinerary.concert .event-mark {
+  font-size: 1.7rem;
+}
+.memory.concert .memory-photo img {
+  border-radius: 50%;
+  aspect-ratio: 1;
+  height: auto;
+  border: 1.2rem solid #312932;
+}
+/* Table setting */
+.supper-image img {
+  border-radius: 50% 50% 1rem 1rem;
+  aspect-ratio: 4/5;
+}
+.menu-title {
+  text-align: center;
+  padding: 2rem 1rem;
+  border-block: 4px double var(--accent);
+}
+.menu-title .invite-line {
+  margin: auto;
+}
+.itinerary.supper {
+  max-width: 50rem;
+  outline: 1px solid var(--accent);
+  outline-offset: -0.6rem;
+  text-align: center;
+}
+.itinerary.supper li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+}
+.itinerary.supper .arrival {
+  text-align: left;
+}
+@media (max-width: 650px) {
+  .lead-columns,
+  .memory.broadsheet,
+  .collection.broadsheet,
+  .memory.voyage,
+  .memory.journal,
+  .memory.cinema,
+  .memory.concert,
+  .memory.folio,
+  .inside-hero.journal,
+  .inside-hero.folio,
+  .inside-hero.exhibition,
+  .inside-hero.courtyard,
+  .inside-hero.letter,
+  .inside-hero.supper,
+  .collection.exhibition {
+    grid-template-columns: 1fr;
+  }
+  .memory-photo img,
+  .journal-front img,
+  .folio-picture img,
+  .doorway img,
+  .supper-image img,
+  .keepsake img {
+    max-height: 21rem;
+  }
+  .journal-front,
+  .keepsake {
+    width: 85%;
+    margin: auto;
+  }
+  .journal-leaf h1 em,
+  .folio-copy h1 em {
+    display: inline;
+  }
+  .inside-hero.exhibition .artwork {
+    width: 90%;
+    margin: auto;
+  }
+  .memory.concert .memory-photo {
+    max-width: 15rem;
+    margin: auto;
+  }
+  .itinerary.atlas ol {
+    gap: 0.75rem;
+  }
+  .itinerary.atlas li {
+    flex-basis: 7.5rem;
+  }
+}
+
+.dream-cover[data-paused="true"] *,
+.dream-cover[data-paused="true"] *::before,
+.dream-cover[data-paused="true"] *::after {
+  animation-play-state: paused !important;
+}
+.inside-hero > .atmosphere {
+  opacity: 0.65;
+}

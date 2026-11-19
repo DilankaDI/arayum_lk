@@ -1,3 +1,23 @@
+import { wedding as sundayGazette } from "../app/samples/wedding/sunday-gazette/lib/wedding";
+import { wedding as coastPost } from "../app/samples/wedding/coast-post/lib/wedding";
+import { wedding as jasminePress } from "../app/samples/wedding/jasmine-press/lib/wedding";
+import { wedding as midnightAtlas } from "../app/samples/wedding/midnight-atlas/lib/wedding";
+import { wedding as teaCountry } from "../app/samples/wedding/tea-country/lib/wedding";
+import { wedding as indigoLoom } from "../app/samples/wedding/indigo-loom/lib/wedding";
+import { wedding as whiteSpace } from "../app/samples/wedding/white-space/lib/wedding";
+import { wedding as cinnamonCourtyard } from "../app/samples/wedding/cinnamon-courtyard/lib/wedding";
+import { wedding as pearlChapel } from "../app/samples/wedding/pearl-chapel/lib/wedding";
+import { wedding as sunlitCitrus } from "../app/samples/wedding/sunlit-citrus/lib/wedding";
+import { wedding as silverExposure } from "../app/samples/wedding/silver-exposure/lib/wedding";
+import { wedding as lotusPool } from "../app/samples/wedding/lotus-pool/lib/wedding";
+import { wedding as scarletRibbon } from "../app/samples/wedding/scarlet-ribbon/lib/wedding";
+import { wedding as galleryOpening } from "../app/samples/wedding/gallery-opening/lib/wedding";
+import { wedding as jazzAfterDark } from "../app/samples/homecoming/jazz-after-dark/lib/wedding";
+import { wedding as supperClub } from "../app/samples/homecoming/supper-club/lib/wedding";
+import { wedding as vinylSocial } from "../app/samples/homecoming/vinyl-social/lib/wedding";
+import { wedding as marqueeNight } from "../app/samples/homecoming/marquee-night/lib/wedding";
+import { wedding as harbourLights } from "../app/samples/homecoming/harbour-lights/lib/wedding";
+import { wedding as palmTerrace } from "../app/samples/homecoming/palm-terrace/lib/wedding";
 import { homecoming } from "../app/samples/homecoming/burgundy-homecoming/lib/homecoming";
 import { wedding as summer } from "../app/samples/wedding/summer-garden/lib/wedding";
 import { wedding as maroonWedding } from "../app/samples/wedding/maroon-garden/lib/wedding";
@@ -35,6 +55,26 @@ export const templates = [
     date: homecoming.dateLabel, isoDate: homecoming.dateISO, venue: homecoming.venue,
     location: homecoming.address, ceremony: "Homecoming Reception", samplePhoto: "velvet-homecoming",
   },
+  sundayGazette.card,
+  coastPost.card,
+  jasminePress.card,
+  midnightAtlas.card,
+  teaCountry.card,
+  indigoLoom.card,
+  whiteSpace.card,
+  cinnamonCourtyard.card,
+  pearlChapel.card,
+  sunlitCitrus.card,
+  silverExposure.card,
+  lotusPool.card,
+  scarletRibbon.card,
+  galleryOpening.card,
+  jazzAfterDark.card,
+  supperClub.card,
+  vinylSocial.card,
+  marqueeNight.card,
+  harbourLights.card,
+  palmTerrace.card,
 ] as const;
 
 export type Invitation = (typeof templates)[number];

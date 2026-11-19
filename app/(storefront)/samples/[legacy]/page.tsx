@@ -1,7 +1,8 @@
 import { notFound } from "next/navigation";
 import { sampleHref, templates } from "../../../../components/templates";
 
-const previous = templates.filter(t => !["summer-garden", "burgundy-homecoming"].includes(t.slug))
+const legacySlugs = new Set(["champagne-seal", "garden-poruwa", "chapel-romance", "velvet-homecoming", "autumn-seal", "maroon-lace"]);
+const previous = templates.filter(t => legacySlugs.has(t.slug))
   .map(t => ({ legacy: t.slug === "maroon-lace" ? "maroon-garden" : t.slug, href: sampleHref(t.slug) }));
 
 export function generateStaticParams() {

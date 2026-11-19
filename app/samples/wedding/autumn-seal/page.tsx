@@ -10,17 +10,22 @@ import { wedding } from "./lib/wedding";
 export default function InvitationPage() {
   return (
     <main>
-      <nav className="flex items-center justify-between gap-4 px-5 py-4 text-sm font-bold" aria-label="Sample invitation">
+      <nav
+        className="flex items-center justify-between gap-4 px-5 py-4 text-sm font-bold"
+        aria-label="Sample invitation"
+      >
         <a href="/templates/">← Templates</a>
         <a href={inquiryHref()}>Choose this design ↗</a>
       </nav>
       <Entrance>
         <Hero />
+        <Gallery />
         <Story />
         <Schedule />
-        <Gallery />
         <Rsvp />
-        <footer>{wedding.card.names.join(" & ")} · {wedding.card.date}</footer>
+        <footer>
+          {wedding.card.names.join(" & ")} · {wedding.card.date}
+        </footer>
       </Entrance>
     </main>
   );

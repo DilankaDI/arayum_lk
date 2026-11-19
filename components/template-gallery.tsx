@@ -14,8 +14,12 @@ function DesignCards({ visible }: { visible: readonly Invitation[] }) {
         {visible.map((template) => (
           <motion.article key={template.slug} layout={reducedMotion ? false : "position"} className="overflow-hidden rounded-[23px] border border-line bg-white shadow-[0_14px_35px_-22px_#50324835]">
             <a href={sampleHref(template.slug)} aria-label={`Preview ${template.title}`} className="group relative flex h-[235px] items-center justify-center overflow-hidden [container-type:inline-size]" style={{ background: template.stage }}>
+              {"previewImage" in template ? (
+                <img src={template.previewImage} alt="" loading="lazy" className="h-full w-full object-cover" />
+              ) : <>
               <PhonePreview template={template} cover className="relative -mr-[7%] w-[34%] -translate-y-[4%] -rotate-10 transition-transform duration-500 group-hover:-translate-x-2 motion-reduce:transition-none" />
               <PhonePreview template={template} className="relative w-[41%] translate-y-[9%] rotate-7 transition-transform duration-500 group-hover:translate-x-2 motion-reduce:transition-none" />
+              </>}
               <span className="absolute top-3 left-3 rounded-full bg-white/95 px-2.5 py-1 text-[10px] font-extrabold">{template.category}</span>
             </a>
             <div className="flex flex-col p-4">

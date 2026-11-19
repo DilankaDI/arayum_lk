@@ -11,5 +11,9 @@ export const metadata = {
 };
 
 export default function Layout({ children }: { children: ReactNode }) {
-  return <html lang="en"><body className="invitation-sample autumn-seal">{children}</body></html>;
+  return (
+    <html lang="en">
+      <body className="invitation-sample autumn-seal">{children}</body>
+    </html>
+  );
 }
