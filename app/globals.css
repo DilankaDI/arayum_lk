@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Manrope Variable", sans-serif;
+  --font-serif: "Cormorant Garamond Variable", Georgia, serif;
+  --color-paper: #fcfafb;
+  --color-ink: #201923;
+  --color-muted: #665d68;
+  --color-line: #eee4e9;
+  --color-blush: #f9edf2;
+  --color-rose: #ce1d54;
+  --color-rose-deep: #aa1546;
+  --color-brass: #a2794c;
+}
