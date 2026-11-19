@@ -1,4 +1,4 @@
-import { Eyebrow, Faq, Footer, Header, Plans, sectionHeading, wrap } from "../../components/storefront";
+import { Eyebrow, Faq, Footer, Header, Plans, sectionHeading, wrap } from "../../../components/storefront";
 
 export const metadata = { title: "Event Invitation Pricing | ArayumLK" };
 

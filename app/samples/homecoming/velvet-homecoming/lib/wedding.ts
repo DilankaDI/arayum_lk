@@ -1,4 +1,5 @@
 export const wedding = {
+  inquiryWhatsApp: "94773312721",
   card: {
     occasion: "homecoming",
     slug: "velvet-homecoming", title: "Velvet Homecoming", category: "Homecoming",

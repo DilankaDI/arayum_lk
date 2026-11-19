@@ -9,7 +9,7 @@ import {
 } from "lucide-react";
 
 import Reveal from "./ui/Reveal";
-import { calendarHref } from "../../../_shared/calendar";
+import { calendarHref } from "../lib/calendar";
 import { wedding } from "../lib/wedding";
 
 const eventIcons = [

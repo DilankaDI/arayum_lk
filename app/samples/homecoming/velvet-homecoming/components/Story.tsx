@@ -1,4 +1,4 @@
-import { Countdown } from "../../../../../components/countdown";
+import { Countdown } from "./Countdown";
 import { wedding } from "../lib/wedding";
 
 export default function Story() {

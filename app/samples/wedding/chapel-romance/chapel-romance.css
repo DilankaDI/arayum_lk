@@ -1,3 +1,62 @@
+@import "tailwindcss" source(none);
+@source "./";
+
+@theme {
+  --font-serif: "Cormorant Garamond Variable", Georgia, serif;
+  --color-ink: #201923;
+}
+
+.invitation-sample {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "Manrope Variable", sans-serif;
+  --display: "Cormorant Garamond Variable", Georgia, serif;
+}
+.invitation-sample .invitation-cover {
+  min-height: 100svh;
+  display: grid;
+  place-items: center;
+  padding: 2rem 1rem;
+  background: var(--cover, var(--paper));
+}
+.invitation-sample .cover-card {
+  position: relative;
+  width: min(100%, 35rem);
+  padding: clamp(2rem, 7vw, 5rem) 1.5rem;
+  text-align: center;
+  background: var(--paper);
+  border: 1px solid var(--accent);
+}
+.invitation-sample .monogram {
+  display: inline-grid;
+  place-items: center;
+  min-width: 4rem;
+  min-height: 4rem;
+  margin-bottom: 1.5rem;
+  color: var(--ink);
+  font: italic 1.6rem var(--display);
+}
+.invitation-sample .couple {font: 500 clamp(3.2rem, 8vw, 7rem)/.98 var(--display); overflow-wrap: anywhere}
+.invitation-sample .eyeline {font-size:.7rem; font-weight:700; letter-spacing:.18em; text-transform:uppercase}
+.invitation-sample .open-button, .invitation-sample .music-toggle {
+  border: 1px solid currentColor; background: var(--paper); color: var(--ink);
+  border-radius: 2rem; padding:.7rem 1.25rem; font-size:.78rem; font-weight:700; cursor:pointer;
+}
+.invitation-sample .open-button {margin-top:2rem}
+.invitation-sample .music-toggle {position:fixed; z-index:5; bottom:1rem; right:1rem; box-shadow:0 3px 15px #0002}
+.invitation-sample .hero {display:grid; align-items:center; gap:clamp(1.5rem,4vw,5rem); margin:auto; max-width:75rem; padding:clamp(2rem,6vw,6rem) 6%}
+.invitation-sample .hero img {width:100%; height:clamp(19rem,44vw,36rem); object-fit:cover}
+.invitation-sample .section {max-width:53rem; margin:auto; padding:clamp(3rem,7vw,6rem) 1.3rem; border-top:1px solid color-mix(in srgb,var(--accent) 50%, transparent)}
+.invitation-sample h2 {font:500 clamp(2.6rem,6vw,4.3rem)/1.05 var(--display); margin-bottom:1.4rem}
+.invitation-sample .section a {text-decoration:underline; text-underline-offset:.25em}
+.invitation-sample .program li {display:flex; align-items:baseline; gap:1.5rem; padding:1rem 0; border-bottom:1px solid color-mix(in srgb,var(--accent) 30%, transparent)}
+.invitation-sample .program time {min-width:5rem; font-weight:700; font-size:.85rem}
+.invitation-sample .album {display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:.75rem}
+.invitation-sample .album img {width:100%; aspect-ratio:3/4; object-fit:cover}
+.invitation-sample footer {padding:2rem 1rem 5rem;text-align:center}
+@media(min-width:700px){.invitation-sample .hero {grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.invitation-sample .album{grid-template-columns:1fr 1fr}.invitation-sample .album img:first-child{grid-column:span 2;aspect-ratio:4/3}}
+
 .chapel-romance {
   --paper: #fbefec;
   --ink: #632c3b;

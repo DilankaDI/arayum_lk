@@ -17,7 +17,7 @@ import Family from "./components/Family";
 import Venue from "./components/Venue";
 import Countdown from "./components/Countdown";
 import Rsvp from "./components/Rsvp";
-import { calendarHref } from "../../_shared/calendar";
+import { calendarHref } from "./lib/calendar";
 import HomecomingNav from "./components/HomecomingNav";
 
 import { homecoming } from "./lib/homecoming";

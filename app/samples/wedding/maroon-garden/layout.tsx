@@ -32,8 +32,8 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <div className={`${script.variable} ${serif.variable}`}>
+    <html lang="en"><body className={`${script.variable} ${serif.variable}`}>
       {children}
-    </div>
+    </body></html>
   );
 }

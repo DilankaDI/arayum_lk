@@ -1,4 +1,4 @@
-import { calendarHref } from "../../../_shared/calendar";
+import { calendarHref } from "../lib/calendar";
 import { wedding } from "../lib/wedding";
 
 export default function Schedule() {

@@ -1,6 +1,6 @@
 import { Suspense } from "react";
-import { ContactDraft } from "../../components/contact-draft";
-import { Eyebrow, Header, sectionHeading, wrap } from "../../components/storefront";
+import { ContactDraft } from "../../../components/contact-draft";
+import { Eyebrow, Header, sectionHeading, wrap } from "../../../components/storefront";
 
 export const metadata = { title: "Request an Invitation | ArayumLK" };
 

@@ -1,4 +1,4 @@
-import { TemplateGallery } from "../../components/template-gallery";
+import { TemplateGallery } from "../../../components/template-gallery";
 
 export default function SamplesPage() {
   return (

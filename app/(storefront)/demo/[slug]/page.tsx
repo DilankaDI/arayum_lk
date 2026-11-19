@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { sampleHref, templates } from "../../../components/templates";
+import { sampleHref, templates } from "../../../../components/templates";
 
 type Props = { params: Promise<{ slug: string }> };
 

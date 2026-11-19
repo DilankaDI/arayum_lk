@@ -1,8 +1,8 @@
 import { ArrowRight, ArrowUpRight, CalendarDays, Check, Eye, Heart, Images, LayoutTemplate, Link2, MapPin, MessageCircle, Play, Smartphone } from "lucide-react";
-import { FeaturedPhones } from "../components/phone-preview";
-import { Eyebrow, Faq, Footer, Header, Plans, inquiryHref, primary, secondary, sectionHeading, SmallBadge, wrap } from "../components/storefront";
-import { OccasionLinks } from "../components/template-gallery";
-import { templates } from "../components/templates";
+import { FeaturedPhones } from "../../components/phone-preview";
+import { Eyebrow, Faq, Footer, Header, Plans, inquiryHref, primary, secondary, sectionHeading, SmallBadge, wrap } from "../../components/storefront";
+import { OccasionLinks } from "../../components/template-gallery";
+import { templates } from "../../components/templates";
 
 const steps = [
   { title: "Pick a design", text: "Try the live invitations and choose a style that feels right for your day.", icon: LayoutTemplate },

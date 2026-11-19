@@ -1,5 +1,5 @@
-import { Eyebrow, Footer, Header, sectionHeading, wrap } from "../../components/storefront";
-import { TemplateGallery } from "../../components/template-gallery";
+import { Eyebrow, Footer, Header, sectionHeading, wrap } from "../../../components/storefront";
+import { TemplateGallery } from "../../../components/template-gallery";
 
 export const metadata = { title: "Event Invitation Templates | ArayumLK" };
 
