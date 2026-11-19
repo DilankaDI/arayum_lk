@@ -1,24 +1,15 @@
 "use client";
 
-import { useState } from "react";
+
 import { ArrowUpRight, Play } from "lucide-react";
 import { motion, useReducedMotion } from "motion/react";
 import { PhonePreview } from "./phone-preview";
 import { inquiryHref } from "./storefront";
-import { sampleHref, templates } from "./templates";
+import { occasionOf, occasions, sampleHref, templates, type Invitation } from "./templates";
 
-const categories = ["All designs", ...new Set(templates.map(({ category }) => category))] as const;
-
-export function TemplateGallery({ filter = false }: { filter?: boolean }) {
-  const [category, setCategory] = useState<(typeof categories)[number]>("All designs");
+function DesignCards({ visible }: { visible: readonly Invitation[] }) {
   const reducedMotion = useReducedMotion();
-  const visible = templates.filter((item) => category === "All designs" || item.category === category);
-
   return (
-    <>
-      {filter && <div role="group" aria-label="Filter templates" className="mb-7 flex flex-wrap gap-2">
-        {categories.map((item) => <button key={item} type="button" aria-pressed={category === item} onClick={() => setCategory(item)} className={`min-h-10 cursor-pointer rounded-full border px-4 text-sm font-bold ${category === item ? "border-rose bg-rose text-white" : "border-line bg-white text-muted hover:bg-blush"}`}>{item}</button>)}
-      </div>}
       <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
         {visible.map((template) => (
           <motion.article key={template.slug} layout={reducedMotion ? false : "position"} className="overflow-hidden rounded-[23px] border border-line bg-white shadow-[0_14px_35px_-22px_#50324835]">
@@ -38,6 +29,50 @@ export function TemplateGallery({ filter = false }: { filter?: boolean }) {
           </motion.article>
         ))}
       </div>
-    </>
+  );
+}
+
+export function OccasionLinks() {
+  return (
+    <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      {occasions.map(({ key, title, description }) => {
+        const count = templates.filter(item => occasionOf(item) === key).length;
+        const href = count ? `/templates/#${key}` : inquiryHref(customRequest(key));
+        return (
+          <article key={key} className="flex flex-col rounded-2xl border border-line bg-paper p-5">
+            <h3 className="font-serif text-3xl font-semibold">{title}</h3>
+            <p className="my-3 flex-1 text-sm leading-6 text-muted">{description}</p>
+            <a href={href} className="text-sm font-bold text-rose underline underline-offset-4">
+              {count ? `Browse ${count} designs` : "Ask about a custom invitation"}
+            </a>
+          </article>
+        );
+      })}
+    </div>
+  );
+}
+
+function customRequest(key: string) {
+  return key === "birthdays" ? "a quote for a custom birthday invitation" : "a quote for a custom office party invitation";
+}
+
+export function TemplateGallery() {
+  return (
+    <div className="space-y-14">
+      {occasions.map(({key, title}) => {
+        const designs = templates.filter(template => occasionOf(template) === key);
+        return (
+          <section id={key} key={key} className="scroll-mt-24">
+            <h2 className="mb-4 font-serif text-4xl font-semibold">{title}</h2>
+            {designs.length ? <DesignCards visible={designs} /> : (
+              <div className="rounded-2xl border border-line bg-white p-5">
+                <p className="mb-3 text-sm">Tell us about your event for a personalized quote on WhatsApp.</p>
+                <a className="font-bold text-rose underline" href={inquiryHref(customRequest(key))}>Ask about a custom invitation</a>
+              </div>
+            )}
+          </section>
+        );
+      })}
+    </div>
   );
 }

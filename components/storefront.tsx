@@ -12,7 +12,7 @@ export function inquiryHref(design?: string) {
   const number = businessWhatsApp;
   const request = design ? `?design=${encodeURIComponent(design)}` : "";
   if (!number || !/^\d{8,15}$/.test(number)) return `/contact/${request}`;
-  const message = design ? `Hi ArayumLK! I'd like to ask about ${design} for my event.` : "Hi ArayumLK! I'd like to ask about a digital wedding invitation.";
+  const message = design ? `Hi ArayumLK! I'd like to ask about ${design} for my event.` : "Hi ArayumLK! I'd like to ask about a digital event invitation.";
   return `https://wa.me/${number}?text=${encodeURIComponent(message)}`;
 }
 
@@ -65,7 +65,7 @@ const questions = [
   ["Can we invite guests to a wedding and a homecoming?", "Yes. We can show multiple events on an invitation, or make separate wedding and homecoming links. Ask for a quote if you need separate invitations."],
   ["Where do guest replies go?", "The RSVP button on your live invitation opens a prefilled message to your chosen WhatsApp number so guests can confirm their attendance and party size."],
   ["How long does the invitation stay online?", "Hosting is included until three months after your event date. If you need the link for longer, contact us on WhatsApp to arrange an extension."],
-  ["Can you add our wedding photos after the event?", "Yes. For LKR 1,000, we can add up to 10 event photos during the included hosting period."],
+  ["Can you add our event photos after the event?", "Yes. For LKR 1,000, we can add up to 10 event photos during the included hosting period."],
   ["How do we pay?", "Payment is by bank transfer. Template orders are paid in full. Custom designs require a 50% non-refundable deposit, with the balance due after the design is ready."],
 ] as const;
 
@@ -73,7 +73,7 @@ export function Faq() {
   return (
     <section id="faq" className="scroll-mt-20 border-t border-line bg-white py-17 sm:py-24">
       <div className={`${wrap} grid gap-8 lg:grid-cols-[.7fr_1.3fr]`}>
-        <div><Eyebrow>FAQ</Eyebrow><h2 className={sectionHeading}>Good to know.</h2><p className="mt-3 text-muted">A few things couples ask before getting started.</p></div>
+        <div><Eyebrow>FAQ</Eyebrow><h2 className={sectionHeading}>Good to know.</h2><p className="mt-3 text-muted">A few things hosts ask before getting started.</p></div>
         <div className="divide-y divide-line rounded-3xl border border-line bg-paper px-5 sm:px-7">
           {questions.map(([question, answer]) => (
             <details key={question} className="group">
@@ -88,8 +88,8 @@ export function Faq() {
 }
 
 const plans = [
-  { title: "Template invitation", price: "LKR 2,500", description: "A design from the collection, personalized for your celebration.", features: ["One personalized invitation website", "Event schedule, directions and WhatsApp RSVP", "Hosting until three months after your event"], cta: "Browse templates", href: "/templates/" },
-  { title: "Custom invitation", price: "Request a quote", description: "A design made around your wedding’s style and details.", features: ["A bespoke design and layout", "Review your design before launch", "Bank transfer with a 50% upfront deposit"], cta: "Ask about custom design", href: inquiryHref("a custom invitation") },
+  { title: "Template invitation", price: "LKR 2,500", description: "LKR 2,500 applies to the wedding and homecoming templates currently in the collection.", features: ["One personalized invitation website", "Event schedule, directions and WhatsApp RSVP", "Hosting until three months after your event"], cta: "Browse templates", href: "/templates/" },
+  { title: "Custom invitation", price: "Request a quote", description: "Tell us your occasion and design ideas. We’ll quote a price on WhatsApp.", features: ["A bespoke design and layout", "Review your design before launch", "Bank transfer with a 50% upfront deposit"], cta: "Ask about custom design", href: inquiryHref("a custom invitation") },
 ];
 
 export function Plans() {

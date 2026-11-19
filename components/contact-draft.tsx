@@ -17,7 +17,7 @@ export function ContactDraft() {
   const [copyError, setCopyError] = useState(false);
   const number = businessWhatsApp;
   const connected = Boolean(number && /^\d{8,15}$/.test(number));
-  const message = `Hi ArayumLK! I’d like to ask about ${design || "a digital wedding invitation"}.${date ? ` My event date is ${date}.` : ""}`;
+  const message = `Hi ArayumLK! I’d like to ask about ${design || "a digital event invitation"}.${date ? ` My event date is ${date}.` : ""}`;
 
   return (
     <div className="rounded-3xl border border-line bg-white p-5 sm:p-7">

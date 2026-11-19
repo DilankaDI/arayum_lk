@@ -1,0 +1,2 @@
+.burgundy-homecoming { --font-cormorant: "Cormorant Garamond Variable", Georgia, serif; background:#130406; font-family:var(--invitation-sans),sans-serif; }
+@media (max-width: 900px) { .burgundy-homecoming main > div { padding-bottom:calc(6rem + env(safe-area-inset-bottom)); } }
