@@ -1,0 +1,18 @@
+.autumn-seal {
+  --paper: #f7eee3;
+  --ink: #743f32;
+  --accent: #a67558;
+  --cover: #e5c7b1;
+}
+
+.invitation-sample.autumn-seal .cover-card {background:linear-gradient(156deg,transparent 48%,#ddbc9c 48.4%,transparent 49%) top left/51% 5rem no-repeat,linear-gradient(204deg,transparent 48%,#ddbc9c 48.4%,transparent 49%) top right/51% 5rem no-repeat,var(--paper);padding-top:5rem;box-shadow:7px 8px 0 #cda98b}
+
+.invitation-sample.autumn-seal .monogram {border-radius:45% 52% 46% 50%;background:#924e36;color:white}
+
+.invitation-sample.autumn-seal .hero img {border:9px solid #fff8e9;border-bottom-width:2.5rem;transform:rotate(2deg)}
+
+.invitation-sample.autumn-seal .hero-copy {order:-1}
+
+.invitation-sample.autumn-seal .program time {border-bottom:2px solid var(--accent)}
+
+.invitation-sample.autumn-seal .album img {border:5px solid #fff9ef;box-shadow:2px 4px 8px #48261625}

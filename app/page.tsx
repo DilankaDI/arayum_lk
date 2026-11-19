@@ -33,7 +33,7 @@ export default function Home() {
               <p className="mt-5 max-w-[50ch] text-base leading-7 text-muted sm:text-lg sm:leading-8">Your story, every event, and WhatsApp RSVP in one beautiful link. Choose a design and we’ll personalize it for your celebration.</p>
               <div className="mt-7 flex flex-wrap gap-2.5">
                 <a href="/templates/" className={primary}>Browse templates <ArrowRight size={17} /></a>
-                <a href="/demo/champagne-seal/" className={secondary}><Play size={15} /> See a live demo</a>
+                <a href="/samples/champagne-seal/" className={secondary}><Play size={15} /> See a live demo</a>
               </div>
               <div className="mt-6 flex flex-wrap items-center gap-x-2.5 gap-y-1 text-xs font-bold text-muted sm:text-sm"><span className="text-rose">Launch offer</span><strong className="font-extrabold text-ink">LKR 2,500</strong><del>LKR 4,000</del><span className="text-muted">· One-time payment</span></div>
             </div>

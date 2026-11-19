@@ -1,0 +1,16 @@
+.garden-poruwa {
+  --paper: #eff0dc;
+  --ink: #304530;
+  --accent: #77824d;
+  --cover: #d5dfcb;
+}
+
+.invitation-sample.garden-poruwa .cover-card {border-radius:48% 48% 1rem 1rem;border:3px double var(--accent);padding-top:5rem}
+
+.invitation-sample.garden-poruwa .monogram {border:1px solid var(--accent);border-radius:0 65% 0 65%}
+
+.invitation-sample.garden-poruwa .hero img {border-radius:48% 48% .3rem .3rem}
+
+.invitation-sample.garden-poruwa .program li {border-left:2px solid var(--accent);padding-left:1rem}
+
+.invitation-sample.garden-poruwa .album img {border-radius:5rem 5rem 0 0}

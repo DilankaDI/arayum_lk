@@ -1,0 +1,22 @@
+.velvet-homecoming {
+  --paper: #481e30;
+  --ink: #fae5d6;
+  --accent: #dcb28f;
+  --cover: #e1cbd3;
+}
+
+.invitation-sample.velvet-homecoming .cover-card {background:#351222;border:4px double #c89e77}
+
+.invitation-sample.velvet-homecoming .monogram {color:#efc89a;border-block:1px solid #c89e77}
+
+.invitation-sample.velvet-homecoming .couple {font-style:italic}
+
+.invitation-sample.velvet-homecoming .hero {position:relative;isolation:isolate;display:grid;grid-template-columns:1fr;min-height:83svh;max-width:none;align-items:end;text-align:left;color:white}
+
+.invitation-sample.velvet-homecoming .hero img {position:absolute;inset:0;z-index:-2;height:100%}
+
+.invitation-sample.velvet-homecoming .hero::after {content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(0deg,#230a19ee,transparent 88%)}
+
+.invitation-sample.velvet-homecoming .program time {color:#edc49e}
+
+.invitation-sample.velvet-homecoming .album {gap:3px}

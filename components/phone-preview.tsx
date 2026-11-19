@@ -1,6 +1,6 @@
 import { ArrowUpRight, CalendarDays, Heart, Images, MapPin, MessageCircle, Wifi } from "lucide-react";
 import { Envelope, LaceFlowers } from "./wedding-stationery";
-import { invitationPhoto, type Invitation } from "./templates";
+import { sampleHref, invitationPhoto, type Invitation } from "./templates";
 
 export function PhonePreview({ template, cover = false, className = "" }: { template: Invitation; cover?: boolean; className?: string }) {
   const { paper, ink, accent, names, date } = template;
@@ -51,7 +51,7 @@ export function PhonePreview({ template, cover = false, className = "" }: { temp
 
 export function FeaturedPhones({ template }: { template: Invitation }) {
   return (
-    <a href={`/demo/${template.slug}/`} className="group relative isolate mx-auto block w-full max-w-[535px] rounded-3xl focus-visible:outline-2 focus-visible:outline-offset-8 focus-visible:outline-rose [container-type:inline-size]" aria-label={`Open the ${template.title} live demo`}>
+    <a href={sampleHref(template.slug)} className="group relative isolate mx-auto block w-full max-w-[535px] rounded-3xl focus-visible:outline-2 focus-visible:outline-offset-8 focus-visible:outline-rose [container-type:inline-size]" aria-label={`Open the ${template.title} live demo`}>
       <div aria-hidden="true" className="absolute inset-[8%] -z-10 rounded-full bg-rose/15 blur-[70px]" />
       <div className="relative mx-auto flex w-full items-center justify-center py-2 sm:py-5">
         <PhonePreview template={template} cover className="z-0 -mr-[8%] hidden w-[39%] -translate-y-[3%] -rotate-11 transition-transform duration-500 group-hover:-rotate-13 sm:block motion-reduce:transition-none" />

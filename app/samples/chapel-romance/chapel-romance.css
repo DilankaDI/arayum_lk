@@ -1,0 +1,18 @@
+.chapel-romance {
+  --paper: #fbefec;
+  --ink: #632c3b;
+  --accent: #a46574;
+  --cover: #ead7db;
+}
+
+.invitation-sample.chapel-romance .cover-card {border-radius:50% 50% 0 0;outline:1px solid var(--accent);outline-offset:-9px;padding-top:5rem}
+
+.invitation-sample.chapel-romance .monogram {border-bottom:1px solid var(--accent)}
+
+.invitation-sample.chapel-romance .hero {display:flex;flex-direction:column;text-align:center;max-width:54rem}
+
+.invitation-sample.chapel-romance .hero img {height:clamp(16rem,35vw,25rem);border-radius:12rem 12rem 0 0;order:2}
+
+.invitation-sample.chapel-romance .section h2 {font-style:italic;text-align:center}
+
+.invitation-sample.chapel-romance .album img {border:5px solid #fffaf4}
